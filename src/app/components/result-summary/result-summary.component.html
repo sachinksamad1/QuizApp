@@ -1,0 +1,70 @@
+<mat-card class="result-card">
+    <mat-card-header>
+      <mat-card-title>Quiz Results</mat-card-title>
+      <mat-card-subtitle>
+        Your performance summary
+      </mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <div class="score-container">
+        <mat-progress-spinner
+          class="score-spinner"
+          [diameter]="150"
+          [strokeWidth]="10"
+          [value]="scorePercentage"
+          [color]="getScoreColor()">
+        </mat-progress-spinner>
+        <div class="score-value">
+          <span>{{ scorePercentage }}%</span>
+        </div>
+      </div>
+      
+      <p class="feedback-message">{{ getFeedbackMessage() }}</p>
+      
+      <mat-divider></mat-divider>
+      
+      <div class="stats-container">
+        <div class="stat-item">
+          <mat-icon color="primary">quiz</mat-icon>
+          <div class="stat-details">
+            <span class="stat-label">Total Questions</span>
+            <span class="stat-value">{{ totalQuestions }}</span>
+          </div>
+        </div>
+        
+        <div class="stat-item">
+          <mat-icon color="green">check_circle</mat-icon>
+          <div class="stat-details">
+            <span class="stat-label">Correct Answers</span>
+            <span class="stat-value">{{ correctAnswers }}</span>
+          </div>
+        </div>
+        
+        <div class="stat-item">
+          <mat-icon color="warn">cancel</mat-icon>
+          <div class="stat-details">
+            <span class="stat-label">Incorrect Answers</span>
+            <span class="stat-value">{{ incorrectAnswers }}</span>
+          </div>
+        </div>
+        
+        <div class="stat-item">
+          <mat-icon color="accent">remove_circle</mat-icon>
+          <div class="stat-details">
+            <span class="stat-label">Skipped Questions</span>
+            <span class="stat-value">{{ skippedQuestions }}</span>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    
+    <mat-card-actions align="end">
+      <button mat-raised-button color="accent" (click)="handleRestart(false)">
+        <mat-icon>replay</mat-icon> Restart Quiz
+      </button>
+      <button mat-raised-button color="primary" (click)="handleRestart(true)">
+        <mat-icon>shuffle</mat-icon> Restart with Random Questions
+      </button>
+    </mat-card-actions>
+  </mat-card>

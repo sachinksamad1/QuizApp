@@ -1,3 +1,9 @@
-import { Routes } from '@angular/router';
+// src/app/app.routes.ts
 
-export const routes: Routes = [];
+import { Routes } from '@angular/router';
+import { QuizComponent } from './components/quiz/quiz.component';
+
+export const routes: Routes = [
+  { path: '', component: QuizComponent },
+  { path: '**', redirectTo: '' }
+];

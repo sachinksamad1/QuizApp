@@ -1,0 +1,294 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "text": "What is Angular?",
+        "category": "basics",
+        "difficulty": "easy",
+        "options": [
+          {
+            "id": 1,
+            "text": "A JavaScript library for building user interfaces",
+            "isCorrect": false
+          },
+          {
+            "id": 2,
+            "text": "A platform and framework for building single-page client applications",
+            "isCorrect": true
+          },
+          {
+            "id": 3,
+            "text": "A server-side rendering technology",
+            "isCorrect": false
+          },
+          {
+            "id": 4,
+            "text": "A database management system",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Angular is a platform and framework for building single-page client applications using HTML and TypeScript."
+      },
+      {
+        "id": 2,
+        "text": "Which of the following is used for dependency injection in Angular?",
+        "category": "core concepts",
+        "difficulty": "medium",
+        "options": [
+          {
+            "id": 1,
+            "text": "NgModule",
+            "isCorrect": false
+          },
+          {
+            "id": 2,
+            "text": "Component",
+            "isCorrect": false
+          },
+          {
+            "id": 3,
+            "text": "Injectable",
+            "isCorrect": true
+          },
+          {
+            "id": 4,
+            "text": "Directive",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "The @Injectable decorator is used to make a class available to the dependency injection system."
+      },
+      {
+        "id": 3,
+        "text": "What is the purpose of NgZone in Angular?",
+        "category": "advanced",
+        "difficulty": "hard",
+        "options": [
+          {
+            "id": 1,
+            "text": "To manage HTTP requests",
+            "isCorrect": false
+          },
+          {
+            "id": 2,
+            "text": "To manage change detection",
+            "isCorrect": true
+          },
+          {
+            "id": 3,
+            "text": "To create animation sequences",
+            "isCorrect": false
+          },
+          {
+            "id": 4,
+            "text": "To route between different views",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "NgZone is a wrapper around Zone.js which helps Angular know when to trigger change detection."
+      },
+      {
+        "id": 4,
+        "text": "Which directive is used for conditional rendering in Angular templates?",
+        "category": "directives",
+        "difficulty": "easy",
+        "options": [
+          {
+            "id": 1,
+            "text": "*ngIf",
+            "isCorrect": true
+          },
+          {
+            "id": 2,
+            "text": "*ngFor",
+            "isCorrect": false
+          },
+          {
+            "id": 3,
+            "text": "*ngSwitch",
+            "isCorrect": false
+          },
+          {
+            "id": 4,
+            "text": "*ngShow",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "*ngIf is used to conditionally include or exclude elements from the DOM based on a condition."
+      },
+      {
+        "id": 5,
+        "text": "Which of the following is NOT a built-in pipe in Angular?",
+        "category": "pipes",
+        "difficulty": "medium",
+        "options": [
+          {
+            "id": 1,
+            "text": "DatePipe",
+            "isCorrect": false
+          },
+          {
+            "id": 2,
+            "text": "CurrencyPipe",
+            "isCorrect": false
+          },
+          {
+            "id": 3,
+            "text": "SortPipe",
+            "isCorrect": true
+          },
+          {
+            "id": 4,
+            "text": "UpperCasePipe",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Angular does not have a built-in SortPipe. You would need to create a custom pipe for sorting data."
+      },
+      {
+        "id": 6,
+        "text": "What is the purpose of trackBy function in *ngFor directive?",
+        "category": "optimization",
+        "difficulty": "medium",
+        "options": [
+          {
+            "id": 1,
+            "text": "To track user interactions",
+            "isCorrect": false
+          },
+          {
+            "id": 2,
+            "text": "To improve performance by tracking identity of items",
+            "isCorrect": true
+          },
+          {
+            "id": 3,
+            "text": "To enable animations for list items",
+            "isCorrect": false
+          },
+          {
+            "id": 4,
+            "text": "To validate form inputs",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "The trackBy function helps Angular identify which items have changed, been added, or removed, leading to more efficient DOM updates."
+      },
+      {
+        "id": 7,
+        "text": "What is the Angular CLI command to generate a new component?",
+        "category": "tools",
+        "difficulty": "easy",
+        "options": [
+          {
+            "id": 1,
+            "text": "ng new component my-component",
+            "isCorrect": false
+          },
+          {
+            "id": 2,
+            "text": "ng generate component my-component",
+            "isCorrect": true
+          },
+          {
+            "id": 3,
+            "text": "ng create component my-component",
+            "isCorrect": false
+          },
+          {
+            "id": 4,
+            "text": "ng add component my-component",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "The command 'ng generate component' or its shorthand 'ng g c' is used to generate a new component in Angular."
+      },
+      {
+        "id": 8,
+        "text": "Which hook is called only once in the lifetime of a component?",
+        "category": "lifecycle hooks",
+        "difficulty": "medium",
+        "options": [
+          {
+            "id": 1,
+            "text": "ngOnInit",
+            "isCorrect": true
+          },
+          {
+            "id": 2,
+            "text": "ngOnChanges",
+            "isCorrect": false
+          },
+          {
+            "id": 3,
+            "text": "ngDoCheck",
+            "isCorrect": false
+          },
+          {
+            "id": 4,
+            "text": "ngAfterViewChecked",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "ngOnInit is called once after the first ngOnChanges and component initialization."
+      },
+      {
+        "id": 9,
+        "text": "What is the purpose of the async pipe in Angular?",
+        "category": "pipes",
+        "difficulty": "hard",
+        "options": [
+          {
+            "id": 1,
+            "text": "To create asynchronous functions",
+            "isCorrect": false
+          },
+          {
+            "id": 2,
+            "text": "To automatically subscribe to and unsubscribe from observables",
+            "isCorrect": true
+          },
+          {
+            "id": 3,
+            "text": "To delay the rendering of components",
+            "isCorrect": false
+          },
+          {
+            "id": 4,
+            "text": "To handle form validation asynchronously",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "The async pipe subscribes to an Observable or Promise and returns the latest value it emitted. When a component is destroyed, it automatically unsubscribes to prevent memory leaks."
+      },
+      {
+        "id": 10,
+        "text": "What is the purpose of the ViewChild decorator in Angular?",
+        "category": "component interaction",
+        "difficulty": "hard",
+        "options": [
+          {
+            "id": 1,
+            "text": "To query and access child components in the view",
+            "isCorrect": true
+          },
+          {
+            "id": 2,
+            "text": "To create child routes",
+            "isCorrect": false
+          },
+          {
+            "id": 3,
+            "text": "To validate child form controls",
+            "isCorrect": false
+          },
+          {
+            "id": 4,
+            "text": "To create child processes",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "ViewChild provides access to a child component, directive, or DOM element from the parent component class."
+      }
+    ]
+  }

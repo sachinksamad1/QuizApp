@@ -1,0 +1,55 @@
+<div class="quiz-container">
+    <div class="quiz-header">
+      <h1>Angular Quiz</h1>
+      
+      <button 
+        mat-mini-fab 
+        [color]="timerEnabled ? 'accent' : 'basic'" 
+        (click)="toggleTimer()" 
+        class="timer-toggle-btn"
+        [matTooltip]="timerEnabled ? 'Disable Timer' : 'Enable Timer'">
+        <mat-icon>{{ timerEnabled ? 'timer' : 'timer_off' }}</mat-icon>
+      </button>
+    </div>
+    
+    <div *ngIf="timerEnabled" class="timer-container">
+      <mat-progress-bar 
+        mode="determinate" 
+        [value]="getTimerProgressValue()" 
+        [color]="getTimerColor()">
+      </mat-progress-bar>
+      <span class="timer-text">{{ timeRemaining }} seconds remaining</span>
+    </div>
+    
+    <div *ngIf="isLoading" class="loading-container">
+      <mat-spinner></mat-spinner>
+      <p>Loading questions...</p>
+    </div>
+    
+    <ng-container *ngIf="!isLoading">
+      <div *ngIf="quizState.quizCompleted; else activeQuiz">
+        <app-result-summary
+          [totalQuestions]="quizState.questions.length"
+          [correctAnswers]="quizState.correctCount"
+          [incorrectAnswers]="quizState.incorrectCount"
+          [skippedQuestions]="quizState.questions.length - quizState.userAnswers.size"
+          [scorePercentage]="quizService.getResults().scorePercentage"
+          (restartQuiz)="handleRestartQuiz($event)">
+        </app-result-summary>
+      </div>
+      
+      <ng-template #activeQuiz>
+        <app-question-card
+          *ngIf="currentQuestion"
+          [question]="currentQuestion"
+          [currentIndex]="quizState.currentQuestionIndex"
+          [totalQuestions]="quizState.questions.length"
+          [selectedOptionId]="selectedOptionId"
+          [showFeedback]="showFeedback"
+          [isAnswerCorrect]="isAnswerCorrect"
+          (optionSelected)="handleOptionSelected($event)"
+          (nextQuestion)="handleNextQuestion()">
+        </app-question-card>
+      </ng-template>
+    </ng-container>
+  </div>

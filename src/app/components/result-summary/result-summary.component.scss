@@ -1,0 +1,91 @@
+.result-card {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    .score-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px 0;
+      position: relative;
+      
+      .score-spinner {
+        margin: 0 auto;
+      }
+      
+      .score-value {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-weight: 700;
+      }
+    }
+    
+    .feedback-message {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 20px 0;
+      font-weight: 500;
+    }
+    
+    mat-divider {
+      margin: 20px 0;
+    }
+    
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+      
+      .stat-item {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.02);
+        
+        mat-icon {
+          margin-right: 16px;
+          font-size: 24px;
+          height: 24px;
+          width: 24px;
+        }
+        
+        .stat-details {
+          display: flex;
+          flex-direction: column;
+          
+          .stat-label {
+            font-size: 0.9rem;
+            color: rgba(0, 0, 0, 0.6);
+          }
+          
+          .stat-value {
+            font-size: 1.4rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    
+    mat-card-actions {
+      button {
+        margin-left: 8px;
+      }
+    }
+  }
+  
+  .green {
+    color: #4caf50 !important;
+  }
+  
+  .orange {
+    color: #ff9800 !important;
+  }
+  
+  .red {
+    color: #f44336 !important;
+  }

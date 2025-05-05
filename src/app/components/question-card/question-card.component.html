@@ -1,0 +1,51 @@
+<mat-card class="question-card">
+    <mat-card-header>
+      <mat-card-title>Question {{ currentIndex + 1 }} of {{ totalQuestions }}</mat-card-title>
+      <mat-card-subtitle>
+        <mat-chip [color]="getDifficultyColor()" selected>{{ question.difficulty }}</mat-chip>
+        <mat-chip color="primary" selected>{{ question.category }}</mat-chip>
+      </mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-progress-bar 
+      mode="determinate" 
+      [value]="progressValue" 
+      color="primary">
+    </mat-progress-bar>
+    
+    <mat-card-content>
+      <h2 class="question-text">{{ question.text }}</h2>
+      
+      <mat-radio-group 
+        [(ngModel)]="selectedOptionId" 
+        (change)="handleOptionChange($event)" 
+        class="options-list">
+        <mat-radio-button 
+          *ngFor="let option of question.options" 
+          [value]="option.id" 
+          [disabled]="showFeedback"
+          [class]="getOptionClass(option.id)"
+          class="option-item">
+          {{ option.text }}
+        </mat-radio-button>
+      </mat-radio-group>
+      
+      <div *ngIf="showFeedback" class="feedback-container">
+        <mat-divider></mat-divider>
+        <div class="feedback" [ngClass]="{'correct': isAnswerCorrect, 'incorrect': !isAnswerCorrect}">
+          <h3>{{ isAnswerCorrect ? 'Correct!' : 'Incorrect!' }}</h3>
+          <p *ngIf="question.explanation">{{ question.explanation }}</p>
+        </div>
+      </div>
+    </mat-card-content>
+    
+    <mat-card-actions align="end">
+      <button 
+        mat-raised-button 
+        color="primary" 
+        (click)="nextQuestion.emit()" 
+        [disabled]="!showFeedback">
+        {{ currentIndex < totalQuestions - 1 ? 'Next Question' : 'See Results' }}
+      </button>
+    </mat-card-actions>
+  </mat-card>

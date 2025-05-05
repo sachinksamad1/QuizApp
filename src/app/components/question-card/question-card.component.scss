@@ -1,0 +1,74 @@
+.question-card {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    .question-text {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      margin: 20px 0;
+      
+      .option-item {
+        margin: 8px 0;
+        padding: 12px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        
+        &:hover:not([disabled]) {
+          background-color: rgba(0, 0, 0, 0.04);
+        }
+      }
+    }
+    
+    .correct-answer {
+      background-color: rgba(76, 175, 80, 0.15) !important;
+      border-left: 4px solid #4caf50;
+    }
+    
+    .incorrect-answer {
+      background-color: rgba(244, 67, 54, 0.15) !important;
+      border-left: 4px solid #f44336;
+    }
+    
+    .feedback-container {
+      margin-top: 20px;
+      
+      .feedback {
+        margin-top: 16px;
+        padding: 16px;
+        border-radius: 4px;
+        
+        &.correct {
+          background-color: rgba(76, 175, 80, 0.1);
+          border-left: 4px solid #4caf50;
+        }
+        
+        &.incorrect {
+          background-color: rgba(244, 67, 54, 0.1);
+          border-left: 4px solid #f44336;
+        }
+        
+        h3 {
+          margin-top: 0;
+          font-weight: 500;
+        }
+      }
+    }
+    
+    mat-card-actions {
+      padding: 16px;
+    }
+  }
+  
+  mat-progress-bar {
+    margin-bottom: 16px;
+  }
+  
+  mat-chip {
+    margin-right: 8px;
+  }
